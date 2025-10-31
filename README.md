@@ -1,4 +1,4 @@
-# Laser Hypot Continuity
+# Vapor Pro XL Data Output
 
 ## Table of Contents
 
