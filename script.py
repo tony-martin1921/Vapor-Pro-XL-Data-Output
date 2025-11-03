@@ -63,8 +63,6 @@ def autofit_excel_columns(filepath):
 
 
 def save_record_xlsx(record):
-    """Save a single test record vertically into Excel with filename from data timestamp"""
-
     # Extract timestamp from data fields
     date_str = record.get("DATE", None)
     time_str = record.get("TIME OF DAY", None)
@@ -102,6 +100,10 @@ def save_record_xlsx(record):
         print(f"Saved Excel to {local_path} and copied to network share as {filename}")
     except Exception as e:
         print(f"Error copying to network share: {e}")
+
+# ============================
+# Main Program
+# ============================
 
 if __name__ == "__main__":
     ser = connect_serial()
