@@ -21,6 +21,7 @@ This project is designed to read output and send to a shared network drive from 
 
 ## Usage
 
+- Setup necessary filepaths & folders as desired
 - Connect to fileserver and store credentials using File Explorer
 - Double click .exe to start the program, any time data is "printed" or when a test ends-
   - It will create a local copy of the document
