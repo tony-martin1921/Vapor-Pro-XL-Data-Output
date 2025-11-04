@@ -5,6 +5,7 @@ import os
 import re
 from openpyxl import load_workbook
 import time
+import datetime
 
 # ============================
 # Configuration
@@ -33,10 +34,10 @@ def connect_serial():
                 rtscts=False,
                 dsrdtr=False
             )
-            print(f"Connected to {SERIAL_PORT}")
+            print(f"{datetime.datetime.now().replace(microsecond=0)}~ Connected to {SERIAL_PORT}")
             return ser
         except serial.SerialException as e:
-            print(f"Serial connection failed: {e}. Retrying in 5s...")
+            print(f"{datetime.datetime.now().replace(microsecond=0)}~ Serial connection failed: {e}. Retrying in 5s...")
             time.sleep(5)
 
 
@@ -44,7 +45,7 @@ def read_serial_line(ser):
     try:
         return ser.readline().decode(errors='ignore').strip()
     except serial.SerialException:
-        print("Serial connection lost. Attempting to reconnect...")
+        print(f"{datetime.datetime.now().replace(microsecond=0)}~ Serial connection lost. Attempting to reconnect...")
         return None
 
 
@@ -97,9 +98,9 @@ def save_record_xlsx(record):
     try:
         dest_path = os.path.join(NETWORK_SHARE, filename)
         shutil.copy(local_path, dest_path)
-        print(f"Saved Excel to {local_path} and copied to network share as {filename}")
+        print(f"{datetime.datetime.now().replace(microsecond=0)}~ Saved Excel to {local_path} and copied to network share as {filename}")
     except Exception as e:
-        print(f"Error copying to network share: {e}")
+        print(f"{datetime.datetime.now().replace(microsecond=0)}~ Error copying to network share: {e}")
 
 # ============================
 # Main Program
@@ -111,7 +112,7 @@ if __name__ == "__main__":
     collecting = False
     skipping = False
 
-    print("Reading serial data... Press Ctrl+C to stop.")
+    print(f"{datetime.datetime.now().replace(microsecond=0)}~ Reading serial data... Press Ctrl+C to stop.")
 
     try:
         while True:
