@@ -52,7 +52,7 @@ or else they can lose connection and need to be unplugged and replugged<br>
   - Install USB Serial Driver <https://www.brookfieldengineering.com/products/moisture-analyzer/-/media/227dd0ba7bfb4d839fcbe9ac8bd750c2.ashx?dmc=1&la=en&revision=1f3de233-3b6e-4f06-9878-84a39d38e85a>
 
 ```sh
-git clone https://github.com/matrixplastic/Vapor-Pro-XL-Data-Output.git
+git clone https://github.com/tony-martin1921/Vapor-Pro-XL-Data-Output.git
 cd /Path/To/Your/Cloned/Project
 pip install -r requirements.txt
 ```
